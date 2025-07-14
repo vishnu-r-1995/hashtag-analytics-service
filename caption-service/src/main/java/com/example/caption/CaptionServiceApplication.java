@@ -1,4 +1,4 @@
-package com.example.caption.caption_service;
+package com.example.caption;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
