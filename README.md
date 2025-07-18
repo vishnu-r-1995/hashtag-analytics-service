@@ -12,6 +12,8 @@ Spring Boot (Web + Kafka)
 
 Apache Kafka + Zookeeper
 
+Redis (for persistent analytics)
+
 Docker & Docker Compose
 
 Postman (for testing APIs)
@@ -84,9 +86,9 @@ Response
 📂 Project Structure
 
 hashtag-analytics-service/
-├── docker-compose.yml
-├── caption-service/         # Spring Boot app to produce captions
-└── hashtag-service/         # Spring Boot app to consume and analyze hashtags
+|── docker-compose.yml
+|── caption-service/         # Spring Boot app to produce captions
+|── hashtag-service/         # Spring Boot app to consume and analyze hashtags
 
 ✅ Features
 
@@ -98,9 +100,17 @@ Scalable microservice architecture
 
 Easily testable with Postman
 
-📜 TODO (optional extensions)
+🧠 Redis Integration for Persistent Analytics
 
-Store analytics in Redis or PostgreSQL
+The system now supports Redis-based storage to persist hashtag counts across service restarts and avoid relying on in-memory tracking.
+
+🔹 New Endpoint: Top Hashtags from Redis
+
+Request
+
+GET http://localhost:8081/analytics/v2/top-hashtags
+
+📜 TODO (optional extensions)
 
 Track hashtags over time windows
 
