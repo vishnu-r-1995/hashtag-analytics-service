@@ -1,6 +1,6 @@
 📊 Hashtag Analytics Service
 
-This project is a microservice-based hashtag analytics system built using Spring Boot, Apache Kafka, and Docker.
+This project is a microservice-based hashtag analytics system built using Spring Boot, Apache Kafka, Redis and Docker.
 
 It allows users to submit Instagram-like captions containing hashtags, and tracks the frequency of those hashtags in real time using Kafka streaming.
 
