@@ -38,7 +38,7 @@ docker-compose up
 
 This will:
 
-Start Kafka and Zookeeper
+Start Kafka, Zookeeper, and Redis
 
 Build and run both services (caption-service, hashtag-service)
 
@@ -83,6 +83,29 @@ Response
   }
 ]
 
+🔹 3. Get Top Hashtags (Redis-Persistent)
+
+Request
+
+GET http://localhost:8081/analytics/v2/top-hashtags
+
+Response
+
+[
+  {
+    "hashtag": "sun",
+    "count": 4
+  },
+  {
+    "hashtag": "beach",
+    "count": 2
+  },
+  {
+    "hashtag": "moon",
+    "count": 2
+  }
+]
+
 📂 Project Structure
 
 hashtag-analytics-service/
@@ -99,16 +122,6 @@ Kafka-based stream processing
 Scalable microservice architecture
 
 Easily testable with Postman
-
-🧠 Redis Integration for Persistent Analytics
-
-The system now supports Redis-based storage to persist hashtag counts across service restarts and avoid relying on in-memory tracking.
-
-🔹 New Endpoint: Top Hashtags from Redis
-
-Request
-
-GET http://localhost:8081/analytics/v2/top-hashtags
 
 📜 TODO (optional extensions)
 
