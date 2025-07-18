@@ -26,6 +26,15 @@ services:
     networks:
       - hashtag-network
 
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - hashtag-network
+
+
   caption-service:
     build: ./caption-service
     container_name: caption-service
@@ -43,10 +52,13 @@ services:
       - "8081:8080"
     depends_on:
       - kafka
+      - redis
     networks:
       - hashtag-network
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_DATA_REDIS_HOST=redis
+      - SPRING_DATA_REDIS_PORT=6379
 
 networks:
   hashtag-network:
